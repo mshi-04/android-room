@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class Word(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "word") val word: String
-    ) {
+) {
 
 
 }

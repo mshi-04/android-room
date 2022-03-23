@@ -6,7 +6,7 @@ import com.example.androidroom.repository.WordRepository
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
-class WordViewModel(private val repository: WordRepository): ViewModel() {
+class WordViewModel(private val repository: WordRepository) : ViewModel() {
     val allWords: LiveData<List<Word>> = repository.allWords.asLiveData()
 
     fun insert(word: Word) = viewModelScope.launch {
@@ -14,7 +14,7 @@ class WordViewModel(private val repository: WordRepository): ViewModel() {
     }
 }
 
-class WordViewModelFactory(private val repository: WordRepository): ViewModelProvider.Factory {
+class WordViewModelFactory(private val repository: WordRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(WordViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
